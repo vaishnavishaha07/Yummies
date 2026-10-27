@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Yummies - Online Ordering</title>
+
+    <link rel="stylesheet" href="style1.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="page">
+
+        <!-- ================= HEADER ================= -->
+
+        <header class="header">
+
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-utensils"></i>
+                </div>
+
+                <div>
+                    <h1>Yummies</h1>
+                    <span>Order. Eat. Enjoy.</span>
+                </div>
+            </div>
+
+
+            <div class="search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input type="text" id="searchInput" placeholder="Search for food, beverages...">
+
+            </div>
+
+
+            <nav class="navbar">
+
+                <a href="#" class="nav-link active">Home</a>
+                <a href="#menu" class="nav-link">Menu</a>
+                <a href="#offers" class="nav-link">Offers</a>
+                <a href="#orders" class="nav-link">Orders</a>
+
+            </nav>
+
+
+            <div class="header-icons">
+
+                <button class="icon-btn" id="cartButton">
+
+                    <i class="fa-solid fa-cart-shopping"></i>
+
+                    <span id="cartCount">0</span>
+
+                </button>
+
+
+                <button class="icon-btn" id="profileButton" onclick="window.location.href='profile.html'">
+
+                    <i class="fa-regular fa-user"></i>
+
+                </button>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- ================= MAIN ================= -->
+
+        <main class="main-content">
+
+
+            <!-- ================= LEFT SIDEBAR ================= -->
+
+            <aside class="sidebar">
+
+                <h3>MENU</h3>
+
+
+                <div class="side-category active-category" data-category="all">
+
+                    <i class="fa-solid fa-border-all"></i>
+
+                    <span>All Items</span>
+
+                </div>
+
+
+                <div class="side-category" data-category="breakfast">
+
+                    <i class="fa-solid fa-bowl-food"></i>
+
+                    <span>Breakfast</span>
+
+                </div>
+
+
+                <div class="side-category" data-category="subs">
+
+                    <i class="fa-solid fa-burger"></i>
+
+                    <span>Subs</span>
+
+                </div>
+
+
+                <div class="side-category" data-category="pasta">
+
+                    <i class="fa-solid fa-utensils"></i>
+
+                    <span>Pasta</span>
+
+                </div>
+
+
+                <div class="side-category" data-category="bowl">
+
+                    <i class="fa-solid fa-bowl-rice"></i>
+
+                    <span>Indian Bowl</span>
+
+                </div>
+
+
+                <div class="side-category" data-category="thali">
+
+                    <i class="fa-solid fa-plate-wheat"></i>
+
+                    <span>Chapati Thali</span>
+
+                </div>
+
+
+                <div class="side-category" data-category="hot">
+
+                    <i class="fa-solid fa-mug-hot"></i>
+
+                    <span>Hot Beverages</span>
+
+                </div>
+
+
+                <div class="side-category" data-category="cold">
+
+                    <i class="fa-solid fa-glass-water"></i>
+
+                    <span>Cold Beverages</span>
+
+                </div>
+
+
+                <!-- PROMO -->
+
+                <div class="sidebar-promo">
+
+                    <div class="promo-placeholder">
+
+                        <i class="fa-solid fa-leaf"></i>
+
+                    </div>
+
+
+                    <h2>
+                        Fresh food,
+                        <br>
+                        made for you
+                    </h2>
+
+
+                    <p>
+                        Delicious meals and beverages
+                        at your favourite place.
+                    </p>
+
+
+                    <button class="primary-btn" onclick="scrollToMenu()">
+
+                        Explore Menu
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+                </div>
+
+            </aside>
+
+
+
+            <!-- ================= CENTER ================= -->
+
+            <section class="center-content" id="menu">
+
+
+                <!-- HERO -->
+
+                <div class="hero">
+
+                    <div class="hero-text">
+
+                        <span class="hero-small">
+                            WELCOME TO
+                        </span>
+
+                        <h2>
+                            Yummies
+                        </h2>
+
+                        <p>
+                            Delicious food,
+                            made fresh for you.
+                        </p>
+
+
+                        <button class="primary-btn" onclick="scrollToMenu()">
+
+                            Order Now
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="hero-image">
+
+                        <div class="hero-placeholder">
+
+                            <i class="fa-solid fa-utensils"></i>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="slider-dots">
+
+                        <span class="dot active-dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ================= QUICK CATEGORIES ================= -->
+
+                <section class="section">
+
+                    <div class="section-header">
+
+                        <h2>
+                            Popular Categories
+                        </h2>
+
+                        <button class="view-btn" onclick="showAllItems()">
+
+                            View all
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="categories">
+
+
+                        <div class="category-card" data-category-card="breakfast">
+
+                            <div class="category-icon">
+
+                                <i class="fa-solid fa-bowl-food"></i>
+
+                            </div>
+
+                            <p>Breakfast</p>
+
+                        </div>
+
+
+
+                        <div class="category-card" data-category-card="subs">
+
+                            <div class="category-icon">
+
+                                <i class="fa-solid fa-burger"></i>
+
+                            </div>
+
+                            <p>Subs</p>
+
+                        </div>
+
+
+
+                        <div class="category-card" data-category-card="pasta">
+
+                            <div class="category-icon">
+
+                                <i class="fa-solid fa-utensils"></i>
+
+                            </div>
+
+                            <p>Pasta</p>
+
+                        </div>
+
+
+
+                        <div class="category-card" data-category-card="bowl">
+
+                            <div class="category-icon">
+
+                                <i class="fa-solid fa-bowl-rice"></i>
+
+                            </div>
+
+                            <p>Indian Bowl</p>
+
+                        </div>
+
+
+
+                        <div class="category-card" data-category-card="hot">
+
+                            <div class="category-icon">
+
+                                <i class="fa-solid fa-mug-hot"></i>
+
+                            </div>
+
+                            <p>Hot Drinks</p>
+
+                        </div>
+
+
+
+                        <div class="category-card" data-category-card="cold">
+
+                            <div class="category-icon">
+
+                                <i class="fa-solid fa-glass-water"></i>
+
+                            </div>
+
+                            <p>Cold Drinks</p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- ================= MENU ================= -->
+
+                <section class="section">
+
+                    <div class="section-header">
+
+                        <h2>
+                            Our Menu
+                        </h2>
+
+                        <span class="item-count" id="itemCount">
+                            24 Items
+                        </span>
+
+                    </div>
+
+
+                    <!-- BREAKFAST -->
+
+                    <div class="menu-section" data-section="breakfast">
+
+                        <div class="menu-title">
+
+                            <div>
+
+                                <h3>
+                                    Indian Breakfast
+                                </h3>
+
+                                <span>
+                                    Fresh breakfast favourites
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="products">
+
+
+                            <div class="product-card" data-category="breakfast" data-name="Poha" data-price="30">
+
+                                <div class="product-image">
+
+                                    <i class="fa-solid fa-bowl-food"></i>
+
+                                </div>
+
+                                <div class="product-info">
+
+                                    <h3>Poha</h3>
+
+                                    <p>
+                                        Fresh Indian breakfast
+                                    </p>
+
+                                </div>
+
+                                <div class="product-bottom">
+
+                                    <strong>
+                                        ₹30
+                                    </strong>
+
+                                    <button class="add-btn">
+                                        Add +
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="product-card" data-category="breakfast" data-name="Upma" data-price="40">
+
+                                <div class="product-image">
+
+                                    <i class="fa-solid fa-bowl-food"></i>
+
+                                </div>
+
+                                <div class="product-info">
+
+                                    <h3>Upma</h3>
+
+                                    <p>
+                                        Soft and delicious
+                                    </p>
+
+                                </div>
+
+                                <div class="product-bottom">
+
+                                    <strong>
+                                        ₹40
+                                    </strong>
+
+                                    <button class="add-btn">
+                                        Add +
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="product-card" data-category="breakfast" data-name="Bun Maska" data-price="49">
+
+                                <div class="product-image">
+
+                                    <i class="fa-solid fa-bread-slice"></i>
+
+                                </div>
+
+                                <div class="product-info">
+
+                                    <h3>Bun Maska</h3>
+
+                                    <p>
+                                        Soft bun with butter
+                                    </p>
+
+                                </div>
+
+                                <div class="product-bottom">
+
+                                    <strong>
+                                        ₹49
+                                    </strong>
+
+                                    <button class="add-btn">
+                                        Add +
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="product-card" data-category="breakfast" data-name="Idli Sambar" data-price="49">
+
+                                <div class="product-image">
+
+                                    <i class="fa-solid fa-bowl-rice"></i>
+
+                                </div>
+
+                                <div class="product-info">
+
+                                    <h3>Idli Sambar</h3>
+
+                                    <p>
+                                        Idli served with sambar
+                                    </p>
+
+                                </div>
+
+                                <div class="product-bottom">
+
+                                    <strong>
+                                        ₹49
+                                    </strong>
+
+                                    <button class="add-btn">
+                                        Add +
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="product-card" data-category="breakfast" data-name="Medu Wada" data-price="59">
+
+                                <div class="product-image">
+
+                                    <i class="fa-solid fa-circle"></i>
+
+                                </div>
+
+                                <div class="product-info">
+
+                                    <h3>Medu Wada</h3>
+
+                                    <p>
+                                        Crispy South Indian snack
+                                    </p>
+
+                                </div>
+
+                                <div class="product-bottom">
+
+                                    <strong>
+                                        ₹59
+                                    </strong>
+
+                                    <button class="add-btn">
+                                        Add +
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- SUBS -->
+
+                    <div class="menu-section" data-section="subs">
+
+                        <div class="menu-title">
+
+                            <div>
+
+                                <h3>
+                                    Subs With Chips
+                                </h3>
+
+                                <span>
+                                    Freshly grilled subs
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="products">
+
+
+                            <div class="product-card" data-category="subs" data-name="Veg Grilled Sub" data-price="99">
+
+                                <div class="product-image">
+                                    <i class="fa-solid fa-burger"></i>
+                                </div>
+
+                                <div class="product-info">
+
+                                    <h3>Veg Grilled Sub</h3>
+
+                                    <p>Grilled vegetable sub</p>
+
+                                </div>
+
+                                <div class="product-bottom">
+
+                                    <strong>₹99</strong>
+
+                                    <button class="add-btn">
+                                        Add +
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="product-card" data-category="subs" data-name="Veg N Cheese" data-price="109">
+
+                                <div class="product-image">
+                                    <i class="fa-solid fa-burger"></i>
+                                </div>
+
+                                <div class="product-info">
+
+                                    <h3>Veg N Cheese</h3>
+
+                                    <p>Vegetable and cheese sub</p>
+
+                                </div>
+
+                                <div class="product-bottom">
+
+                                    <strong>₹109</strong>
+
+                                    <button class="add-btn">
+                                        Add +
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="product-card" data-category="subs" data-name="Grilled Sub" data-price="109">
+
+                                <div class="product-image">
+                                    <i class="fa-solid fa-burger"></i>
+                                </div>
+
+                                <div class="product-info">
+
+                                    <h3>Grilled Sub</h3>
+
+                                    <p>Classic grilled sub</p>
+
+                                </div>
+
+                                <div class="product-bottom">
+
+                                    <strong>₹109</strong>
+
+                                    <button class="add-btn">
+                                        Add +
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="product-card" data-category="subs" data-name="Cheese Grilled Sub"
+                                data-price="109">
+
+                                <div class="product-image">
+                                    <i class="fa-solid fa-burger"></i>
+                                </div>
+
+                                <div class="product-info">
+
+                                    <h3>Cheese Grilled Sub</h3>
+
+                                    <p>Grilled sub with cheese</p>
+
+                                </div>
+
+                                <div class="product-bottom">
+
+                                    <strong>₹109</strong>
+
+                                    <button class="add-btn">
+                                        Add +
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="product-card" data-category="subs" data-name="Grilled Veg Pesto Sub"
+                                data-price="119">
+
+                                <div class="product-image">
+                                    <i class="fa-solid fa-burger"></i>
+                                </div>
+
+                                <div class="product-info">
+
+                                    <h3>Grilled Veg Pesto Sub</h3>
+
+                                    <p>Veg sub with pesto</p>
+
+                                </div>
+
+                                <div class="product-bottom">
+
+                                    <strong>₹119</strong>
+
+                                    <button class="add-btn">
+                                        Add +
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="product-card" data-category="subs" data-name="Grilled Veg Focaccia"
+                                data-price="129">
+
+                                <div class="product-image">
+                                    <i class="fa-solid fa-bread-slice"></i>
+                                </div>
+
+                                <div class="product-info">
+
+                                    <h3>Grilled Veg Focaccia</h3>
+
+                                    <p>Grilled vegetable focaccia</p>
+
+                                </div>
+
+                                <div class="product-bottom">
+
+                                    <strong>₹129</strong>
+
+                                    <button class="add-btn">
+                                        Add +
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="product-card" data-category="subs" data-name="Paneer Tikka Masala Sub"
+                                data-price="139">
+
+                                <div class="product-image">
+                                    <i class="fa-solid fa-burger"></i>
+                                </div>
+
+                                <div class="product-info">
+
+                                    <h3>Paneer Tikka Masala Sub</h3>
+
+                                    <p>Paneer tikka masala sub</p>
+
+                                </div>
+
+                                <div class="product-bottom">
+
+                                    <strong>₹139</strong>
+
+                                    <button class="add-btn">
+                                        Add +
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- PASTA -->
+
+                    <div class="menu-section" data-section="pasta">
+
+                        <div class="menu-title">
+
+                            <div>
+
+                                <h3>
+                                    Pasta's
+                                </h3>
+
+                                <span>
+                                    Delicious pasta varieties
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="products">
+
+
+                            <div class="product-card" data-category="pasta" data-name="Pasta Arrabbiata"
+                                data-price="159">
+
+                                <div class="product-image">
+                                    <i class="fa-solid fa-bowl-food"></i>
+                                </div>
+
+                                <div class="product-info">
+
+                                    <h3>Pasta Arrabbiata</h3>
+
+                                    <p>Classic spicy tomato pasta</p>
+
+                                </div>
+
+                                <div class="product-bottom">
+
+                                    <strong>₹159</strong>
+
+                                    <button class="add-btn">
+                                        Add +
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="product-card" data-category="pasta" data-name="Pasta Alfredo" data-price="169">
+
+                                <div class="product-image">
+                                    <i class="fa-solid fa-bowl-food"></i>
+                                </div>
+
+                                <div class="product-info">
+
+                                    <h3>Pasta Alfredo</h3>
+
+                                    <p>Creamy Alfredo pasta</p>
+
+                                </div>
+
+                                <div class="product-bottom">
+
+                                    <strong>₹169</strong>
+
+                                    <button class="add-btn">
+                                        Add +
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="product-card" data-category="pasta" data-name="Pesto Pasta" data-price="169">
+
+                                <div class="product-image">
+                                    <i class="fa-solid fa-bowl-food"></i>
+                                </div>
+
+                                <div class="product-info">
+
+                                    <h3>Pesto Pasta</h3>
+
+                                    <p>Fresh pesto pasta</p>
+
+                                </div>
+
+                                <div class="product-bottom">
+
+                                    <strong>₹169</strong>
+
+                                    <button class="add-btn">
+                                        Add +
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="product-card" data-category="pasta" data-name="Pink Pasta" data-price="179">
+
+                                <div class="product-image">
+                                    <i class="fa-solid fa-bowl-food"></i>
+                                </div>
+
+                                <div class="product-info">
+
+                                    <h3>Pink Pasta</h3>
+
+                                    <p>Creamy tomato pasta</p>
+
+                                </div>
+
+                                <div class="product-bottom">
+
+                                    <strong>₹179</strong>
+
+                                    <button class="add-btn">
+                                        Add +
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- INDIAN BOWL -->
+
+                    <div class="menu-section" data-section="bowl">
+
+                        <div class="menu-title">
+
+                            <div>
+
+                                <h3>
+                                    Indian Bowl
+                                </h3>
+
+                                <span>
+                                    Comforting Indian meals
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="products">
+
+
+                            <div class="product-card" data-category="bowl" data-name="Veg Dum Biryani Bowl"
+                                data-price="99">
+
+                                <div class="product-image">
+                                    <i class="fa-solid fa-bowl-rice"></i>
+                                </div>
+
+                                <div class="product-info">
+
+                                    <h3>Veg Dum Biryani Bowl</h3>
+
+                                    <p>Flavourful veg biryani</p>
+
+                                </div>
+
+                                <div class="product-bottom">
+
+                                    <strong>₹99</strong>
+
+                                    <button class="add-btn">
+                                        Add +
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="product-card" data-category="bowl" data-name="Dal Khichadi" data-price="99">
+
+                                <div class="product-image">
+                                    <i class="fa-solid fa-bowl-rice"></i>
+                                </div>
+
+                                <div class="product-info">
+
+                                    <h3>Dal Khichadi</h3>
+
+                                    <p>Warm and comforting meal</p>
+
+                                </div>
+
+                                <div class="product-bottom">
+
+                                    <strong>₹99</strong>
+
+                                    <button class="add-btn">
+                                        Add +
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- CHAPATI THALI -->
+
+                    <div class="menu-section" data-section="thali">
+
+                        <div class="menu-title">
+
+                            <div>
+
+                                <h3>
+                                    Chapati Thali
+                                </h3>
+
+                                <span>
+                                    Complete Indian meal
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="products">
+
+
+                            <div class="product-card" data-category="thali" data-name="Chapati Thali" data-price="129">
+
+                                <div class="product-image">
+                                    <i class="fa-solid fa-plate-wheat"></i>
+                                </div>
+
+                                <div class="product-info">
+
+                                    <h3>Chapati Thali</h3>
+
+                                    <p>
+                                        3 Chapati, Bhaji, Rice,
+                                        Dal, Sweet, Papad & Pickle
+                                    </p>
+
+                                </div>
+
+                                <div class="product-bottom">
+
+                                    <strong>₹129</strong>
+
+                                    <button class="add-btn">
+                                        Add +
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- HOT BEVERAGES -->
+
+                    <div class="menu-section" data-section="hot">
+
+                        <div class="menu-title">
+
+                            <div>
+
+                                <h3>
+                                    Hot Beverages
+                                </h3>
+
+                                <span>
+                                    Served hot and fresh
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="products">
+
+
+                            <div class="product-card" data-category="hot" data-name="Masala Tea" data-price="12">
+
+                                <div class="product-image">
+                                    <i class="fa-solid fa-mug-hot"></i>
+                                </div>
+
+                                <div class="product-info">
+
+                                    <h3>Masala Tea</h3>
+
+                                    <p>Classic masala tea</p>
+
+                                </div>
+
+                                <div class="product-bottom">
+
+                                    <strong>₹12</strong>
+
+                                    <button class="add-btn">
+                                        Add +
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="product-card" data-category="hot" data-name="Filter Kaapi" data-price="25">
+
+                                <div class="product-image">
+                                    <i class="fa-solid fa-mug-hot"></i>
+                                </div>
+
+                                <div class="product-info">
+
+                                    <h3>Filter Kaapi</h3>
+
+                                    <p>South Indian filter coffee</p>
+
+                                </div>
+
+                                <div class="product-bottom">
+
+                                    <strong>₹25</strong>
+
+                                    <button class="add-btn">
+                                        Add +
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="product-card" data-category="hot" data-name="Black Coffee" data-price="25">
+
+                                <div class="product-image">
+                                    <i class="fa-solid fa-mug-hot"></i>
+                                </div>
+
+                                <div class="product-info">
+
+                                    <h3>Black Coffee</h3>
+
+                                    <p>Fresh black coffee</p>
+
+                                </div>
+
+                                <div class="product-bottom">
+
+                                    <strong>₹25</strong>
+
+                                    <button class="add-btn">
+                                        Add +
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- COLD BEVERAGES -->
+
+                    <div class="menu-section" data-section="cold">
+
+                        <div class="menu-title">
+
+                            <div>
+
+                                <h3>
+                                    Cold Beverages
+                                </h3>
+
+                                <span>
+                                    Refreshing drinks
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="products">
+
+
+                            <div class="product-card" data-category="cold" data-name="Cold Coffee" data-price="45">
+
+                                <div class="product-image">
+                                    <i class="fa-solid fa-glass-water"></i>
+                                </div>
+
+                                <div class="product-info">
+
+                                    <h3>Cold Coffee</h3>
+
+                                    <p>Chilled creamy coffee</p>
+
+                                </div>
+
+                                <div class="product-bottom">
+
+                                    <strong>₹45</strong>
+
+                                    <button class="add-btn">
+                                        Add +
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </section>
+
+            </section>
+
+
+
+            <!-- ================= RIGHT SIDEBAR ================= -->
+
+            <aside class="right-sidebar">
+
+
+                <!-- CART -->
+
+                <div class="cart-box" id="cartSection">
+
+                    <h2>
+                        YOUR CART
+                    </h2>
+
+
+                    <div class="empty-cart" id="emptyCart">
+
+                        <div class="cart-icon-large">
+
+                            <i class="fa-solid fa-cart-shopping"></i>
+
+                        </div>
+
+
+                        <h3>
+                            Your cart is empty
+                        </h3>
+
+
+                        <p>
+                            Add items to get started
+                        </p>
+
+                    </div>
+
+
+                    <div class="cart-items" id="cartItems">
+                    </div>
+
+
+                    <div class="cart-summary">
+
+                        <div class="summary-row">
+
+                            <span>
+                                Subtotal
+                            </span>
+
+                            <span>
+                                ₹<span id="subtotal">0.00</span>
+                            </span>
+
+                        </div>
+
+
+                        <div class="summary-row">
+
+                            <span>
+                                Delivery Fee
+                            </span>
+
+                            <span>
+                                ₹0.00
+                            </span>
+
+                        </div>
+
+
+                        <div class="total-row">
+
+                            <span>
+                                Total
+                            </span>
+
+                            <span>
+                                ₹<span id="total">0.00</span>
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <button class="cart-btn" id="viewCart">
+
+                        View Cart
+
+                    </button>
+
+
+                    <button class="checkout-btn" id="checkout">
+
+                        Checkout
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- OFFERS -->
+
+                <div class="offers-box" id="offers">
+
+                    <h2>
+                        OFFERS FOR YOU
+                    </h2>
+
+
+                    <div class="offer">
+
+                        <div class="offer-icon">
+                            <i class="fa-solid fa-percent"></i>
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Special Offer
+                            </strong>
+
+                            <p>
+                                Enjoy your favourite food
+                            </p>
+
+                        </div>
+
+                        <i class="fa-solid fa-chevron-right"></i>
+
+                    </div>
+
+
+                    <div class="offer">
+
+                        <div class="offer-icon">
+                            <i class="fa-solid fa-tag"></i>
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Fresh & Delicious
+                            </strong>
+
+                            <p>
+                                Order now from Yummies
+                            </p>
+
+                        </div>
+
+                        <i class="fa-solid fa-chevron-right"></i>
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </main>
+
+    </div>
+
+
+    <script src="script1.js"></script>
+
+</body>
+
+</html>
