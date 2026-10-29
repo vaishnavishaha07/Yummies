@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yummies | Payment</title>
+    <link rel="stylesheet" href="payment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+    <header class="topbar"><a class="brand" href="index.html"><span class="brand-icon"><i
+                    class="fa-solid fa-utensils"></i></span><span><strong>Yummies</strong><small>Order. Eat.
+                    Enjoy.</small></span></a><a class="back-link" href="index.html"><i
+                class="fa-solid fa-arrow-left"></i> Back to Menu</a></header>
+    <main class="checkout-layout">
+        <section class="panel payment-panel">
+            <p class="eyebrow">SECURE CHECKOUT</p>
+            <h1>Complete your payment</h1>
+            <p class="muted">Choose a payment option to continue with your Yummies order.</p>
+            <div class="method-list"><label class="method-card"><input type="radio" name="paymentMethod" value="upi"
+                        checked><span class="method-icon"><i class="fa-solid fa-mobile-screen-button"></i></span><span
+                        class="method-copy"><strong>Pay with UPI</strong><small>Use your UPI app to pay the order
+                            amount.</small></span></label><label class="method-card"><input type="radio"
+                        name="paymentMethod" value="qr"><span class="method-icon"><i
+                            class="fa-solid fa-qrcode"></i></span><span class="method-copy"><strong>Scan QR
+                            Code</strong><small>Scan the café's QR code using your UPI app.</small></span></label></div>
+            <div id="upiPanel" class="pay-details">
+    <h2>UPI payment</h2>
+    <p class="muted">Enter the café's UPI ID in the settings below, or copy it if already configured.</p>
+
+    <label for="upiId">Café UPI ID</label>
+    <div class="upi-row"><br>
+        <input id="upiId" type="text" placeholder="your-upi-id@bank"><br>
+        <button type="button" id="copyUpi" class="secondary-btn">
+            <i class="fa-regular fa-copy"></i> Copy
+        </button>
+    </div>
+
+    <!-- ADD THIS BUTTON -->
+    <a id="payWithUpi" class="primary-btn" href="#">
+        Pay with UPI app
+    </a>
+
+    <p class="hint">Update this placeholder in <code>payment.js</code> with the real receiving UPI ID.</p>
+</div>
+            <div id="qrPanel" class="pay-details" hidden>
+                <h2>Scan to pay</h2>
+                <div class="qr-frame"><img id="qrPreview" src="qr-code.png.jpeg" alt="Yummies UPI payment QR code">
+                    <p id="qrMessage">Upload the café's actual UPI QR image to display it here.</p>
+                </div><label class="upload-btn" for="qrUpload"><i class="fa-solid fa-upload"></i> Upload QR
+                    image</label><input id="qrUpload" class="file-input" type="file" accept="image/*">
+                <p class="hint">Choose a PNG, JPG or WEBP QR image. The preview is for this browser session.</p>
+            </div>
+            <div class="notice"><i class="fa-solid fa-circle-info"></i><span>This is a front-end college project demo.
+                    It cannot verify a real payment automatically.</span></div><button id="confirmPayment"
+                class="primary-btn" type="button">I have completed payment <i
+                    class="fa-solid fa-arrow-right"></i></button>
+            <p id="paymentStatus" class="status" role="status" aria-live="polite"></p>
+        </section>
+        <aside class="panel summary-panel">
+            <h2>Order summary</h2>
+            <div id="orderItems" class="order-items"></div>
+            <div class="summary-line"><span>Subtotal</span><strong>₹<span id="subtotalAmount">0.00</span></strong></div>
+            <div class="summary-line"><span>Delivery fee</span><strong>₹0.00</strong></div>
+            <div class="summary-total"><span>Total to pay</span><strong>₹<span id="totalAmount">0.00</span></strong>
+            </div><a class="text-link" href="index.html"><i class="fa-solid fa-pen"></i> Edit order</a>
+        </aside>
+    </main>
+    <footer>© Yummies · MIT-WPU Canteen Ordering</footer>
+    <script src="payment.js"></script>
+</body>
+
+</html>
